@@ -1,0 +1,15 @@
+@startuml
+start
+:read .fit file as Array[Byte];
+:extract File Header;
+repeat
+  :read recordHeader;
+  :read definitionMessage;
+  if (definitionMessage.globalMessageNumber == FILE_ID) then (yes)
+    :read FileIdDataMessage;
+  elseif (definitionMessage.globalMessageNumber == FILE_CREATOR) then (yes)
+    :read FileCreatorDataMessage;
+  endif
+repeat while (content Array[Byte] != empty)
+end
+@enduml
