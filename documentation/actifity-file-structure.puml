@@ -1,0 +1,13 @@
+@startuml
+start
+  :get FileHeader;
+  repeat
+    :get RecordHeader;
+    if (MessageType) then (DefinitionMessage)
+      :get DefinitionMessage;
+    else (DataMessage)
+      :get DataMessage;
+    endif
+  repeat while (content.notEmpty)
+stop
+@enduml

@@ -1,0 +1,10 @@
+start	0
+stop	1
+consecutive_depreciated	2
+marker	3
+stop_all	4
+begin_depreciated	5
+end_depreciated	6
+end_all_depreciated	7
+stop_disable	8
+stop_disable_all	9
